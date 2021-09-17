@@ -3,7 +3,6 @@
     "name": "ppeth",
     "slug": "ppeth",
     "privacy": "public",
-    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo-sm.png",

@@ -20,29 +20,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Home = ({ navigation }) => (
+const Exchanges = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Home</Text>
+    <Text style={styles.title}>Exchanges</Text>
     <Button
       title="Go to Details"
       color="white"
-      backgroundColor={colors.lightPurple}
+      backgroundColor={colors.gray}
       onPress={() => {
-        navigation.navigate('Details', { from: 'Home' })
+        navigation.navigate('Details', { from: 'Exchanges' })
       }}
     />
   </View>
 )
 
-Home.propTypes = {
+Exchanges.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Home.defaultProps = {
+Exchanges.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Home
+export default Exchanges
