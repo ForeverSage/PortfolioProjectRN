@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
+import { View, SafeAreaView, /* Text */ Image } from 'react-native'
 
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
@@ -22,6 +22,14 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  logo: {
+    width: 66,
+    height: 58,
+  },
 }
 
 const DrawerMenu = (props) => (
@@ -30,15 +38,17 @@ const DrawerMenu = (props) => (
       <FontIcon.Button
         name="times"
         size={20}
-        color={colors.gray}
-        backgroundColor="white"
+        backgroundColor={colors.grey}
         onPress={() => {
           props.navigation.dispatch(DrawerActions.closeDrawer())
         }}
       />
     </View>
     <View style={styles.main}>
-      <Text>Drawer Menu</Text>
+      <Image
+        style={styles.tinyLogo}
+        source={require('c://Users/tyler/Desktop/Portfolio/PPeth/assets/images/icon-sm.png')}
+      />
     </View>
   </SafeAreaView>
 )

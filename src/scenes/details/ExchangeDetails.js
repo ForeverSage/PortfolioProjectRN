@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const Details = ({ route, navigation }) => {
+const ExchangeDetails = ({ route, navigation }) => {
   const from = route?.params?.from
   return (
     <View style={styles.root}>
@@ -36,7 +36,7 @@ const Details = ({ route, navigation }) => {
   )
 }
 
-Details.propTypes = {
+ExchangeDetails.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({ from: PropTypes.string }),
   }),
@@ -45,9 +45,9 @@ Details.propTypes = {
   }),
 }
 
-Details.defaultProps = {
+ExchangeDetails.defaultProps = {
   route: { params: { from: '' } },
   navigation: { goBack: () => null },
 }
 
-export default Details
+export default ExchangeDetails

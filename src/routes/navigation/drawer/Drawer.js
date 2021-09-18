@@ -35,10 +35,11 @@ const DrawerMenuContainer = (props) => {
 function NotificationsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+      <Button onPress={() => navigation.goBack()} title="Back home" />
     </View>
   )
 }
+
 const DrawerNavigator = () => (
   <Drawer.Navigator initialRouteName="Home" drawerContent={DrawerMenuContainer}>
     <Drawer.Screen name="Exchanges" component={NotificationsScreen} />

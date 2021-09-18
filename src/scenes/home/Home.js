@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.lightGrayPurple,
+    backgroundColor: '#5a9ded',
   },
   title: {
     fontSize: 24,
@@ -25,7 +25,7 @@ const Home = ({ navigation }) => (
     <StatusBar barStyle="light-content" />
     <Text style={styles.title}>Home</Text>
     <Button
-      title="Go to Details"
+      title="Learn More"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
