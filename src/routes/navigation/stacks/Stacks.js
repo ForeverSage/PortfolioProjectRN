@@ -3,7 +3,11 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
 import Home from 'scenes/home'
 import Profile from 'scenes/profile'
-import Details from 'scenes/details'
+import Details from 'scenes/details/Details'
+import Exchanges from '../../../scenes/exchanges/Exchanges'
+import Contact from '../../../scenes/contact/Contact'
+import Content from '../../../scenes/content/Content'
+import Crypto from '../../../scenes/crypto/Crypto'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 
@@ -71,6 +75,78 @@ export const ProfileNavigator = () => (
       options={{
         title: 'Details',
       }}
+    />
+  </Stack.Navigator>
+)
+
+export const ExchangeNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Exchanges"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Exchanges"
+      component={Exchanges}
+      options={({ navigation }) => ({
+        title: 'Exchanges',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+  </Stack.Navigator>
+)
+
+export const ContactNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Contact"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Contact"
+      component={Contact}
+      options={({ navigation }) => ({
+        title: 'Contact',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+  </Stack.Navigator>
+)
+
+export const ContentNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Content"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Content"
+      component={Content}
+      options={({ navigation }) => ({
+        title: 'Content',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+  </Stack.Navigator>
+)
+
+export const CryptoNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Crypto"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Crypto"
+      component={Crypto}
+      options={({ navigation }) => ({
+        title: 'Crypto Prices',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
     />
   </Stack.Navigator>
 )

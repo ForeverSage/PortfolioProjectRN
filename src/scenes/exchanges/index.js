@@ -1,3 +1,3 @@
-import Exchanges from './Exchanges'
+import Exchanges from './Exchanges';
 
-export default Exchanges
+export default Exchanges;

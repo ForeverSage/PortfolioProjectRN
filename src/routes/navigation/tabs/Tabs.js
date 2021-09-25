@@ -3,8 +3,6 @@ import { View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
-
-// stack navigators
 import { HomeNavigator, ProfileNavigator } from '../stacks'
 
 const Tab = createBottomTabNavigator()
@@ -12,7 +10,6 @@ const Tab = createBottomTabNavigator()
 const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
-      // eslint-disable-next-line react/prop-types
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
           case 'Home':
@@ -41,13 +38,6 @@ const TabNavigator = () => (
     tabBarOptions={{
       activeTintColor: colors.blue,
       inactiveTintColor: colors.gray,
-      style: {
-        // backgroundColor: 'white',
-        // borderTopColor: 'gray',
-        // borderTopWidth: 1,
-        // paddingBottom: 5,
-        // paddingTop: 5,
-      },
     }}
     initialRouteName="Home"
     swipeEnabled={false}

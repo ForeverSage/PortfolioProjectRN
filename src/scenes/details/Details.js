@@ -1,37 +1,60 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {
-  StyleSheet, Text, View, StatusBar,
-} from 'react-native'
-import Button from 'components/Button'
-import { colors } from 'theme'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#d9fdfb',
-  },
   title: {
-    fontSize: 24,
-    marginBottom: 20,
+    fontSize: 25,
+    marginBottom: 100,
+    alignContent: 'center',
+    alignSelf: 'center',
+    marginLeft:17,
+    marginRight:17,
+    
   },
+  body: {
+    fontWeight:'700', 
+    fontSize: 24, 
+    width: 300, 
+    alignSelf: 'flex-start'
+  },
+  highlight: {
+    fontWeight:'700', 
+    fontSize: 24, 
+    width: 300, 
+    alignSelf: 'flex-start',
+    color: '#c2aff8'
+  }
 })
 
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
   return (
-    <View style={styles.root}>
+    <View style={{flex: 1,
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#d9fdfb',
+          paddingHorizontal: 75
+          }}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`Details (from ${from})`}</Text>
-      <Button
-        title="Go Back"
-        color="white"
-        backgroundColor={colors.pink}
-        onPress={navigation.goBack}
-      />
+      <Text style={{fontWeight: 'bold', fontSize: 50, color: '#c2aff8', marginLeft: -100, marginTop: -60}}>Ethereum is:</Text> 
+      <Text style={styles.body}>
+      the community-run technology powering the cryptocurrency, ether ($ETH) and <Text style={styles.highlight}>thousands</Text> of decentralized applications.</Text>
+      <TouchableOpacity onPress={() => 
+        navigation.navigate('Home', { from: 'Details' })
+    }>
+        <Image  style={{width: 100, 
+                height: 100,
+                marginTop: 100,
+                marginBottom: 25, 
+                alignSelf: 'center', 
+                borderColor: 'transparent', 
+                borderWidth: 0,}} 
+                variant="top" 
+                source={require('C:/Users/tyler/Desktop/Portfolio/PPeth/assets/images/icon-lg.png')}
+        />
+      </TouchableOpacity>
     </View>
   )
 }
@@ -50,4 +73,4 @@ Details.defaultProps = {
   navigation: { goBack: () => null },
 }
 
-export default Details
+export default Details;

@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/wmaeda/Documents/me/React Native/react-native-boilerplate/package.json: Unexpected token ] in JSON at position 2619
+  SyntaxError: /Users/wmaeda/Documents/me/React Native/react-native-plate/package.json: Unexpected token ] in JSON at position 2619
       at JSON.parse (<anonymous>)
       at /Users/wmaeda/.yarn/lib/cli.js:1625:59
       at Generator.next (<anonymous>)

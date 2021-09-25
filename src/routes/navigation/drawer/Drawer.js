@@ -1,19 +1,26 @@
-import React from 'react'
-import { Button, View } from 'react-native'
+import React from 'react';
+import { Button, View } from 'react-native';
 import {
   createDrawerNavigator,
+  DrawerContent,
   DrawerContentScrollView,
+  DrawerItem,
   DrawerItemList,
-} from '@react-navigation/drawer'
-import DrawerMenu from './DrawerMenu'
-import TabNavigator from '../tabs'
+  DrawerView,
+} from '@react-navigation/drawer';
+import DrawerMenu from './DrawerMenu';
+import TabNavigator from '../tabs';
+import Exchanges from '../../../scenes/exchanges/Exchanges';
+import Content from '../../../scenes/content/Content';
+import Contact from '../../../scenes/contact/Contact';
+import Crypto from '../../../scenes/crypto/Crypto';
 
 const Drawer = createDrawerNavigator()
 
-const DrawerMenuContainer = (props) => {
+export const DrawerMenuContainer = (props) => {
   const { state, ...rest } = props
   const newState = { ...state }
-  newState.routes = newState.routes.filter((item) => item.name !== 'Home')
+  newState.routes = newState.routes.filter((item) => item.name)
   return (
     <DrawerContentScrollView {...props}>
       <DrawerMenu {...props} />
@@ -21,7 +28,8 @@ const DrawerMenuContainer = (props) => {
     </DrawerContentScrollView>
   )
 }
-/* function HomeScreen({ navigation }) {
+
+function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button
@@ -30,21 +38,24 @@ const DrawerMenuContainer = (props) => {
       />
     </View>
   );
-} */
+}
 
 function NotificationsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Back home" />
+      <Button onPress={() => navigation.goBack()} title='Back home' />
     </View>
   )
-}
+} 
 
-const DrawerNavigator = () => (
+export const DrawerNavigator = () => (
   <Drawer.Navigator initialRouteName="Home" drawerContent={DrawerMenuContainer}>
-    <Drawer.Screen name="Exchanges" component={NotificationsScreen} />
-    <Drawer.Screen name="Home" component={TabNavigator} />
+    <Drawer.Screen name='Home' RouteName='Home' component={TabNavigator} />
+    <Drawer.Screen name='Exchanges' RouteName='Exchanges' component={Exchanges} />
+    <Drawer.Screen name='Content' RouteName="Content" component={Content} />
+    <Drawer.Screen name='Contact' RouteName="Contact" component={Contact} />
+    <Drawer.Screen name='Crypto' RouteName="Crypto" component={Crypto} />
   </Drawer.Navigator>
 )
 
-export default DrawerNavigator
+export default DrawerNavigator;

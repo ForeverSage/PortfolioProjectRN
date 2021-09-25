@@ -1,9 +1,4 @@
-/* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit'
-
-// ------------------------------------
-// Constants
-// ------------------------------------
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   checked: false,
@@ -32,4 +27,4 @@ const appSlice = createSlice({
 export const { action } = appSlice
 export const { authenticate, saveMe } = appSlice.actions
 
-export default appSlice.reducer
+export default appSlice.reducer;
